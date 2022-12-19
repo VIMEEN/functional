@@ -1,0 +1,6 @@
+duplicate:: [a] -> [a]
+duplicate [] = []
+duplicate (x:xs) = x:x:duplicate xs
+
+main::IO()
+main = putStr$ show$ duplicate [1,2,3,4]
