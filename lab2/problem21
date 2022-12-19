@@ -1,0 +1,11 @@
+import System.IO
+
+--Insert an element at a given position into a list
+insertAt :: a -> [a] -> Int -> [a]
+insertAt x ys     1 = x:ys
+insertAt x (y:ys) n = y:insertAt x ys (n-1)
+
+main = do
+  putStrLn $ show $ [1, 2, 3]
+  putStr $ show $ insertAt 4 [1, 2, 3] 2
+  return ()
