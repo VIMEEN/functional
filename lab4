@@ -1,0 +1,16 @@
+import System.IO
+
+dupli = concatMap (\x -> [x,x])
+
+repli :: [a] -> Int -> [a]
+repli xs n = concatMap (take n . repeat) xs
+
+for_each(f,list) = if (null list)
+then []
+else f(head list) : for_each(f,tail list)
+
+main = do
+putStr $show $ dupli ["1", "2", "3"]
+putStr $show $ repli "abc" 3
+print (for_each((1+),[1,2,3,4]))
+return()
